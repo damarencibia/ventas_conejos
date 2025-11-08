@@ -1,6 +1,7 @@
 function enviarWhatsApp(categoria) {
-  const numero = "59892419330"; // <-- tu número real
-  const mensaje = `Hola! Estoy interesado en los conejos de la categoría: ${categoria}. ¿Podrías darme más información?`;
+  const numero = "59892419330";
+  const mensaje = `¡Hola! Me gustaría recibir más información sobre la categoría ${categoria}. Estoy considerando realizar una compra.`;
+
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
 }
