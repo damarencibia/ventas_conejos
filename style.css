@@ -73,7 +73,7 @@ html {
   left: -280px;
   width: 260px;
   height: 100vh;
-  background-color: var(--verde-oscuro);
+  background-color: #444;
   color: white;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
   transition: left 0.4s ease;
@@ -91,7 +91,7 @@ html {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: var(--verde-principal);
+  background-color: #444;
 }
 
 .sidebar-header h2 {
