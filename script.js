@@ -1,5 +1,5 @@
 function enviarWhatsApp(categoria) {
-  const numero = "59892419330";
+  const numero = "59896405284";
   const mensaje = `¡Hola! Me gustaría recibir más información sobre la categoría ${categoria}. Estoy considerando realizar una compra.`;
 
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
@@ -43,4 +43,19 @@ function closeMenu() {
   overlay.classList.remove("active");
   menuBtn.classList.remove("hidden");
 }
+
+// Mostrar botón al hacer scroll
+window.addEventListener("scroll", () => {
+  const btn = document.getElementById("btnSubir");
+  if (window.scrollY > 400) {
+    btn.style.display = "flex";
+  } else {
+    btn.style.display = "none";
+  }
+});
+
+// Subir al inicio con scroll suave
+document.getElementById("btnSubir").addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
