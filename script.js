@@ -16,3 +16,31 @@ function moverCarrusel(id, direccion) {
     behavior: 'smooth'
   });
 }
+
+
+function toggleMenu() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+  const menuBtn = document.getElementById("menu-btn");
+
+  sidebar.classList.toggle("active");
+  overlay.classList.toggle("active");
+
+  // Oculta el botón mientras el menú esté visible
+  if (sidebar.classList.contains("active")) {
+    menuBtn.classList.add("hidden");
+  } else {
+    menuBtn.classList.remove("hidden");
+  }
+}
+
+function closeMenu() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+  const menuBtn = document.getElementById("menu-btn");
+
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+  menuBtn.classList.remove("hidden");
+}
+

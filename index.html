@@ -4,9 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conejitos Online</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Tu CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+    <!-- Botón de menú -->
+    <div id="menu-btn" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <!-- Fondo oscuro (overlay) -->
+    <div id="overlay" onclick="closeMenu()"></div>
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h2>ECONEJO</h2>
+        <i class="fa-solid fa-xmark cerrar" onclick="closeMenu()"></i>
+      </div>
+      <ul>
+        <li><a href="#categorias" onclick="closeMenu()">🐰 Gazapos</a></li>
+        <li><a href="#hembras" onclick="closeMenu()">♀️ Hembras Adultas</a></li>
+        <li><a href="#machos" onclick="closeMenu()">♂️ Machos Adultos</a></li>
+        <li><a href="#comida" onclick="closeMenu()">🥕 Comida de Ceba</a></li>
+        <li><a href="#informacion" onclick="closeMenu()">ℹ️ Información</a></li>
+        <li><a href="#footer" onclick="closeMenu()">📩 Contacto</a></li>
+      </ul>
+    </nav>
+
     <!-- Portada -->
     <section id="portada">
       <div class="overlay"></div>
@@ -21,8 +53,7 @@
     </section>
 
     <!-- Gazapos -->
-    <section id="categorias">
-      <!-- GALERÍA -->
+    <section class="categorias" id="categorias">
       <div class="galeria-card">
         <div class="categoria fila">
           <div class="categoria-imagen">
@@ -42,12 +73,11 @@
               <li><strong>2 meses:</strong> 500 – 800 g</li>
               <li><strong>3 meses:</strong> 900 g – 1.2 kg</li>
             </ul>
-
             <button onclick="enviarWhatsApp('Gazapos')">Me interesa</button>
           </div>
         </div>
-        <h3>Razas Disponibles</h3>
 
+        <h3 class="galeria-titulo">Razas Disponibles</h3>
         <div class="galeria">
           <div class="foto">
             <img
@@ -69,15 +99,11 @@
     </section>
 
     <!-- Hembras Adultas -->
-    <section id="categorias">
-      <!-- GALERÍA -->
+    <section class="categorias" id="hembras">
       <div class="galeria-card">
         <div class="categoria fila">
           <div class="categoria-imagen">
-            <img
-              src="assets/img/hembra_adulta.jpg"
-              alt="Gigante de Flandes bebé"
-            />
+            <img src="assets/img/hembra_adulta.jpg" alt="Coneja adulta" />
           </div>
           <div class="categoria-info">
             <h3>Hembras Adultas</h3>
@@ -90,10 +116,12 @@
             <ul>
               <li><strong>Edad:</strong> 6 meses - 3 años</li>
             </ul>
-
-            <button onclick="enviarWhatsApp('Hembras adultas')">Me interesa</button>
+            <button onclick="enviarWhatsApp('Hembras adultas')">
+              Me interesa
+            </button>
           </div>
         </div>
+
         <div class="galeria">
           <div class="foto">
             <img
@@ -113,14 +141,12 @@
             <p>Criollo</p>
             <strong>Peso:</strong> 1.1 – 1.5 kg
           </div>
-          <div class="foto"></div>
         </div>
       </div>
     </section>
 
     <!-- Machos Adultos -->
-    <section id="categorias">
-      <!-- GALERÍA -->
+    <section class="categorias" id="machos">
       <div class="galeria-card">
         <div class="categoria fila">
           <div class="categoria-imagen">
@@ -131,17 +157,19 @@
             <p>
               Nuestros machos adultos son ideales para la cría, con excelente
               capacidad de monta, buena genética y temperamento equilibrado.
-              Están sanos, bien cuidados y acostumbrados al contacto humano, lo
-              que garantiza mejores resultados en la reproducción.
+              Están sanos, bien cuidados y acostumbrados al contacto humano.
             </p>
 
             <ul>
               <li><strong>Edad:</strong> 7 meses - 3.5 años</li>
             </ul>
 
-            <button onclick="enviarWhatsApp('Machos adultos')">Me interesa</button>
+            <button onclick="enviarWhatsApp('Machos adultos')">
+              Me interesa
+            </button>
           </div>
         </div>
+
         <div class="galeria">
           <div class="foto">
             <img
@@ -166,59 +194,116 @@
     </section>
 
     <!-- Comida de Ceba -->
-    <section id="categorias">
-      <!-- GALERÍA -->
+    <section class="categorias comida-ceba" id="comida">
       <div class="galeria-card">
         <div class="categoria fila">
           <div class="categoria-imagen">
             <img
-              style="
-                width: 260px;
-                height: 260px;
-                object-fit: cover;
-                border-radius: 50%;
-              "
               src="assets/img/comida_ceba_portada.jpg"
               alt="Comida de ceba para conejos"
             />
           </div>
+
           <div class="categoria-info">
             <h3>Comida de Ceba</h3>
             <p>
               Nuestra comida de ceba está formulada para garantizar un
-              crecimiento rápido y saludable de tus conejos. Contiene el balance
-              ideal de proteínas, fibra y energía para optimizar la conversión
-              alimenticia y mejorar el peso final de los animales sin afectar su
-              digestión.
+              crecimiento rápido y saludable. Contiene el balance ideal de
+              proteínas, fibra y energía para mejorar la conversión alimenticia
+              sin afectar la digestión.
             </p>
 
             <ul>
-              <li><strong>Uso recomendado:</strong> desde los 45 días.</li>
+              <li><strong>Uso recomendado:</strong> desde los 45 días</li>
               <li><strong>Presentación:</strong> pellet seco o molido</li>
               <li><strong>Contenido proteico:</strong> 16 – 18%</li>
             </ul>
 
-            <ul
-              style="
-                background-color: rgba(255, 193, 7);
-                border-radius: 10\px;
-                padding: 10px;
-              "
-            >
-              <strong style="color: rgb(254, 251, 251)">
-                Usted puede hacer el pedido a partir de un 1 kg, con entrega a
-                domicilio
-              </strong>
-            </ul>
+            <div class="aviso">
+              Usted puede hacer el pedido a partir de 1 kg, con entrega a
+              domicilio.
+            </div>
 
-            <button onclick="enviarWhatsApp('comida de ceba')">Me interesa</button>
+            <button onclick="enviarWhatsApp('Comida de ceba')">
+              Me interesa
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Informativa -->
+    <section id="informacion">
+      <div class="info-container">
+        <h2>Conoce más sobre nosotros</h2>
+        <div class="info-grid">
+          <!-- Sobre nosotros -->
+          <div class="info-card">
+            <i class="fa-solid fa-paw"></i>
+            <h3>Sobre Nosotros</h3>
+            <p>
+              En ECONEJO criamos y cuidamos conejos con cariño y
+              responsabilidad. Brindamos asesoría sobre el cuidado, la
+              alimentación y el bienestar de cada uno de nuestros pequeños.
+            </p>
+          </div>
+
+          <!-- Servicio por encargos -->
+          <div class="info-card">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <h3>Servicio por Encargos</h3>
+            <p>
+              ¿Buscas una raza específica o un tipo de alimento? Puedes realizar
+              encargos personalizados y nosotros nos encargamos de prepararlo y
+              coordinar la entrega según tus necesidades.
+            </p>
+          </div>
+
+          <!-- Entregas -->
+          <div class="info-card">
+            <i class="fa-solid fa-truck"></i>
+            <h3>Entregas y Atención</h3>
+            <p>
+              Realizamos entregas a domicilio dentro de la ciudad con seguridad
+              y cuidado. Además, ofrecemos atención directa por WhatsApp para
+              responder tus dudas y ayudarte en cada paso.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <footer>
-      <p>© 2025 Conejitos Online - David</p>
+      <div class="footer-contenido" id="footer" >
+        <!-- <h3>ECONEJO</h3>
+        <p>Cuidamos y alimentamos tus conejos con amor, calidad y confianza.</p> -->
+        <div class="footer-links">
+          <a
+            href="https://www.linkedin.com/in/david-marichal-arencibia-011b5b385"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/damarencibia" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:davidarencibia223@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a
+            href="https://wa.me/59892419330"
+            target="_blank"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+        <p class="footer-copy">
+          © 2025 <strong>ECONEJO</strong> — Creado por
+          <a href="https://github.com/damarencibia" target="_blank"
+            >damarencibia</a
+          >
+        </p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
